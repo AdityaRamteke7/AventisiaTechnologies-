@@ -32,7 +32,7 @@ export const mockPullRequest: PullRequest = {
   created_at: "2023-04-15T10:00:00Z",
   updated_at: "2023-04-16T14:30:00Z",
   comments: 5,
-  commits: 12,
+  commits: 10,
   changed_files: 8,
   additions: 1245,
   deletions: 320,
@@ -76,6 +76,13 @@ export const mockCommits: Commit[] = [
     author: mockUser,
     date: "2023-04-14T11:30:00Z",
     html_url: "https://github.com/shadcn/ui/commit/b2c3d4e"
+  },
+  {
+    sha: "b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1",
+    message: "fix: button hover state",
+    author: mockUser,
+    date: "2023-04-14T11:30:00Z",
+    html_url: "https://github.com/shadcn/ui/commit/b2c3d4e"
   }
 ];
 
@@ -102,6 +109,23 @@ export const mockReviews: Review[] = [
     id: 1,
     user: mockCollaborators[2],
     state: "approved",
+    body: "LGTM! The implementation is clean and follows our design system guidelines.",
+    submitted_at: "2023-04-16T10:15:00Z",
+    html_url: "https://github.com/shadcn/ui/pull/6928#pullrequestreview-1",
+    comments: [
+      {
+        id: 101,
+        body: "Maybe we should add a transition for the hover state?",
+        path: "src/components/Button.tsx",
+        line: 12,
+        created_at: "2023-04-16T10:16:00Z"
+      }
+    ]
+  },
+  {
+    id: 1,
+    user: mockCollaborators[2],
+    state: "changes_requested",
     body: "LGTM! The implementation is clean and follows our design system guidelines.",
     submitted_at: "2023-04-16T10:15:00Z",
     html_url: "https://github.com/shadcn/ui/pull/6928#pullrequestreview-1",

@@ -18,14 +18,10 @@ const PullRequestHeader: React.FC<PullRequestHeaderProps> = ({ pr }) => {
     <div className="border-b border-gray-200 dark:border-gray-700 pb-4 mb-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold dark:text-white">
-          {pr.title}{" "}
+          {pr.title}
           <span className="text-gray-500 dark:text-gray-400">#{pr.number}</span>
         </h1>
-        <div className="flex space-x-4">
-          <button className="px-4 py-1 text-sm font-medium bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md">
-            Edit
-          </button>
-        </div>
+        
       </div>
 
       <div className="mt-4 flex items-center space-x-4">
