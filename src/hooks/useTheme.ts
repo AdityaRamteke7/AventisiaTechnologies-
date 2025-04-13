@@ -4,18 +4,18 @@ export const useTheme = () => {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
     useEffect(() => {
-        const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        if (storedTheme) {
-            setTheme(storedTheme);
-        } else if (prefersDark) {
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (systemPrefersDark) {
             setTheme('dark');
         }
     }, []);
 
     useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.classList.toggle('dark', theme === 'dark');
         localStorage.setItem('theme', theme);
     }, [theme]);
 

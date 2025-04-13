@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTheme } from "./hooks/useTheme";
+//import { useTheme } from "./hooks/useTheme";
 import PullRequestHeader from "./components/PullRequestHeader";
 import PullRequestTabs from "./components/PullRequestTabs";
 import Conversation from "./components/Conversation";
@@ -16,7 +16,7 @@ import {
 import Review from "./components/Review";
 
 const App: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
   const [activeTab, setActiveTab] = useState<
     "conversation" | "commits" | "files"
   >("conversation");
@@ -26,12 +26,12 @@ const App: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">GitHub Pull Request</h1>
-          <button
+          {/* <button
             onClick={toggleTheme}
             className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-md"
           >
             {theme === "light" ? "Dark Mode" : "Light Mode"}
-          </button>
+          </button> */}
         </div>
 
         <PullRequestHeader pr={mockPullRequest} />
